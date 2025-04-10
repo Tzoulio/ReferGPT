@@ -6,5 +6,5 @@
 
 ## Methodology 
 <div align="center">
-  <img src="./img/main_architecture.png" width=50% height="50%">
+  <img src="./img/main_architecture.png">
 </div>
