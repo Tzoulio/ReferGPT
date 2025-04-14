@@ -26,7 +26,7 @@ TBD
 
 ## Acknowledgement 
 <p align="justify">
-The work is supported from the ”Onderzoeksprogramma Artificiele Intelligentie (AI) Vlaanderen” programme and by Innoviris within the research project TORRES. N. Deligiannis acknowledges support from the Francqui Foundation (2024-2027 Francqui Research Professorship). </p>
+The work is supported by the ”Onderzoeksprogramma Artificiele Intelligentie (AI) Vlaanderen” programme and by Innoviris within the research project TORRES. N. Deligiannis acknowledges support from the Francqui Foundation (2024-2027 Francqui Research Professorship). </p>
 
 ## Citation 
 TBD 
