@@ -10,7 +10,7 @@
   <img src="./img/main_architecture.png">
 </div>
 
-## Instalation
+## Installation
 TBD
 
 ## Results
