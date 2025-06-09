@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+
+        {
+            "name": "baseline castrack",
+            "type": "python",
+            "request": "launch",
+            "program": "kitti_3DMOT.py",
+            "console": "integratedTerminal",
+            "cwd": "/media/diana/Elements/leandro/PhD/MOTKitti/CasTrack",
+            "justMyCode": false,
+            "subProcess": true,
+            "stopOnEntry": true,
+            "args": [
+            ],
+            "env": {
+                "PYTHONPATH": "/media/diana/Elements/leandro/PhD/MOTKitti/CasTrack"
+            },
+            "logToFile": true
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+dataset/trajectory_files
+tracker/config_openai_chat.yaml
+evaluation/results/sha_key/data/
+dataset/llm_output_data/
+**/__pycache__/
+dataset/detections/
+dataset/query_dataset
+dataset/data

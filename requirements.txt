@@ -1,0 +1,59 @@
+# Core PyTorch and ML frameworks
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+transformers==4.49.0
+accelerate==1.5.0
+
+# Computer Vision and Image Processing
+opencv-python==4.11.0.86
+pillow==11.1.0
+scikit-image==0.25.2
+
+# Scientific Computing
+numpy==2.0.1
+scipy==1.15.2
+scikit-learn==1.6.1
+pandas==2.2.3
+matplotlib==3.10.1
+
+# NLP and Language Models
+sentence-transformers==3.4.1
+tokenizers==0.21.0
+nltk==3.9.1
+av==14.4.0 
+# CLIP and Vision-Language Models
+clip==1.0
+safetensors==0.5.3
+qwen_vl_utils==0.0.11
+peft==0.15.2
+# 3D Processing and Tracking
+filterpy==1.4.5
+motmetrics==1.4.0
+lap==0.5.12
+pyquaternion==0.9.9
+pyproj==3.7.1
+
+# Configuration and Utilities
+PyYAML==6.0.2
+tqdm==4.67.1
+easydict==1.13
+yacs==0.1.8
+
+# Optional: OpenAI API (for GPT-4V)
+openai==1.66.2
+
+# Geometric Processing
+shapely==2.0.7
+
+# Additional utilities
+requests==2.32.3
+fire==0.7.0
+rich==13.9.4
+
+# TensorFlow (for legacy components)
+tensorflow==2.19.0
+
+# Development and debugging
+ipython==9.3.0
+jupyter_client==8.6.3

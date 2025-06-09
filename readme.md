@@ -1,0 +1,188 @@
+# ReferGPT: Towards Zero-Shot Referring Multi-Object Tracking
+
+[![arXiv](https://img.shields.io/badge/arXiv-2504.09195-b31b1b.svg)](https://arxiv.org/abs/2504.09195)
+[![GitHub](https://img.shields.io/badge/GitHub-ReferGPT-blue)](https://github.com/Tzoulio/ReferGPT)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+
+**Official implementation of "ReferGPT: Towards Zero-Shot Referring Multi-Object Tracking" (CVPRW 2025)**
+
+ReferGPT introduces a novel approach to language-guided 3D multi-object tracking by integrating CLIP vision-language understanding, Large Language Models (LLMs), and Vision-Language Models (VLMs) for zero-shot referring multi-object tracking. Our method enables tracking objects based on natural language descriptions without requiring task-specific training.
+
+<p align="center">
+<img src="img/in_front_cars.gif"/>
+<img src="img/same_direction.gif"/>
+<img src="img/black_cars.gif"/>
+</p>
+
+## Methodology 
+<div align="center">
+  <img src="./img/main_architecture.png">
+</div>
+
+## 🚀 Key Features
+
+- **Zero-Shot Language-Guided Tracking**: Track objects using natural language descriptions without task-specific training
+- **Multimodal Architecture**: Combines CLIP, LLM, and VLM for comprehensive understanding
+- **3D Multi-Object Tracking**: Full 3D tracking with Kalman filtering and advanced association
+- **Multiple Detector Support**: Compatible with PV-RCNN, Point-RCNN, SECOND-IOU, CasA, VirConv, and more
+- **HOTA Evaluation**: Comprehensive evaluation using state-of-the-art HOTA metrics
+
+## 📋 Table of Contents
+
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Configuration](#configuration)
+- [Results](#results)
+- [Citation](#citation)
+
+## 🛠️ Installation
+
+For detailed installation instructions, including environment setup, data preparation, and troubleshooting, please see our comprehensive [Installation Guide](docs/installation.md).
+
+**Quick Setup:**
+```bash
+git clone https://github.com/Tzoulio/ReferGPT.git
+cd ReferGPT
+conda create -n refergpt python=3.12
+conda activate refergpt
+pip install -r requirements.txt
+```
+
+**Requirements:**
+- Python 3.12+ (tested with 3.12.9)
+- CUDA 11.0+ or CUDA 12.0+
+- Linux (Ubuntu 18.04+)
+
+For complete setup instructions and data downloads, visit: **[📖 Installation Guide](docs/installation.md)**
+
+## 🚀 Quick Start
+
+### Basic Usage
+
+1. **Configure paths in config file**
+```bash
+# Edit the configuration file
+nano config/global/cfg_refergpt.yaml
+```
+
+Update the following paths:
+- `dataset_path`: Path to your KITTI dataset
+- `detections_path`: Path to your detection files
+- `expression_path`: Path to referring expressions
+- `llm_output_data_file`: Path to LLM outputs (if using pre-computed)
+
+2. **Run tracking**
+```bash
+# Run tracking for both cars and pedestrians
+bash run_tracker.sh
+```
+
+### Advanced Usage
+
+**Run specific tracking type:**
+```bash
+# For cars only
+python3 main.py --cfg_file config/global/cfg_refergpt.yaml
+
+# For pedestrians only  
+python3 main.py --cfg_file config/global/cfg_refergpt_pedestrian.yaml
+```
+
+**Generate new LLM outputs:**
+```bash
+# Enable LLM generation in config
+# Set use_llm: True and save_llm_output: True in config file
+python3 main.py --cfg_file config/global/cfg_refergpt.yaml
+```
+
+## ⚙️ Configuration
+
+### Key Configuration Options
+
+Edit `config/global/cfg_refergpt.yaml`:
+
+```yaml
+# VLM/LLM Configuration
+vlm_model: "phi"              # VLM model: "phi", "llava", "gpt4"
+use_llm: True                 # Generate new LLM outputs vs use pre-computed
+save_llm_output: False        # Save generated outputs for future use
+
+# Tracking Parameters
+tracking_type: "Car"          # "Car" or "Pedestrian"
+similarity_threshold: -1      # Similarity threshold for matching
+distance_threshold: 150       # Distance threshold for association
+
+# Detection Scores
+input_score: -1.5            # Minimum detection score
+init_score: -1.5             # Score threshold for track initialization
+update_score: -1.5           # Score threshold for track updates
+post_score: 1.6              # Post-processing score threshold
+```
+
+### Supported VLM Models
+
+- **Phi-3-Vision**: Lightweight and efficient (default)
+- **LLaVA**: High-quality vision-language understanding
+- **GPT-4V**: Premium performance (requires API key)
+
+## 📈 Results
+
+### Refer-KITTI Benchmark Results
+
+| Dataset | HOTA | DetA | DetRe | DetPR | AssA | AssRe | AssPr | LocA |
+|---------|------|------|-------|-------|------|-------|-------|------|
+| **Refer-KITTI** | 49.46 | 39.43 | 50.21 | 58.91 | 62.57 | 73.74 | 72.78 | 81.85 |
+| **Refer-KITTIv2** | 30.12 | 15.69 | 21.55 | 34.41 | 59.02 | 74.59 | 68.20 | 79.76 |
+| **Refer-KITTI+** | 43.44 | 29.89 | 36.59 | 56.98 | 63.60 | 75.20 | 73.27 | 82.23 |
+
+### Performance Characteristics
+
+- **Zero-shot Capability**: No task-specific training required
+- **Language Flexibility**: Supports complex natural language queries
+- **3D Accuracy**: State-of-the-art 3D tracking performance
+
+## 📚 Documentation
+
+- **[Installation Guide](docs/installation.md)**: Complete setup instructions
+- **[Framework Overview](doc/framework.jpg)**: Visual architecture overview
+- **[Demo Video](doc/demo.gif)**: Example tracking results
+
+## 🔧 Troubleshooting
+
+For common issues and solutions, see the [Installation Guide](docs/installation.md#troubleshooting).
+
+Quick fixes:
+- **CUDA Out of Memory**: Use smaller VLM model (Phi instead of LLaVA)
+- **Missing Dependencies**: `pip install --upgrade transformers accelerate`
+- **Path Issues**: Ensure all config paths are absolute paths
+
+## 📝 Citation
+
+If you find ReferGPT useful in your research, please consider citing:
+
+```bibtex
+@inproceedings{tzouvaras2025refergpt,
+  title={ReferGPT: Towards Zero-Shot Referring Multi-Object Tracking},
+  author={Tzouvaras, Leandro and Rego, Dayana and Dimou, Anastasios and Daras, Petros},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops},
+  year={2025}
+}
+```
+
+## 🙏 Acknowledgments
+
+- KITTI dataset providers for the tracking benchmark
+- OpenAI for CLIP and GPT models
+- The open-source community for various model implementations
+
+## 📄 License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+We welcome contributions! Please feel free to submit issues and pull requests.
+
+---
+
+**Contact**: For questions or collaborations, please open an issue on GitHub or contact the authors.
