@@ -161,11 +161,14 @@ Quick fixes:
 If you find ReferGPT useful in your research, please consider citing:
 
 ```bibtex
-@inproceedings{tzouvaras2025refergpt,
-  title={ReferGPT: Towards Zero-Shot Referring Multi-Object Tracking},
-  author={Tzouvaras, Leandro and Rego, Dayana and Dimou, Anastasios and Daras, Petros},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops},
-  year={2025}
+@misc{chamiti2025refergptzeroshotreferringmultiobject,
+      title={ReferGPT: Towards Zero-Shot Referring Multi-Object Tracking}, 
+      author={Tzoulio Chamiti and Leandro Di Bella and Adrian Munteanu and Nikos Deligiannis},
+      year={2025},
+      eprint={2504.09195},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2504.09195}, 
 }
 ```
 
