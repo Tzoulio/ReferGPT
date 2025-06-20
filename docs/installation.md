@@ -76,7 +76,6 @@ dataset/
 │   │       ├── calib/
 │   │       ├── image_02/
 │   │       ├── pose/
-│   │       ├── label_02/
 │   │       └── velodyne/
 │   ├── detections_casa/                    # CasA detections (recommended)
 │   │   ├── 0005/
