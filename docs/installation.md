@@ -136,7 +136,7 @@ dataset/
 #### 1. KITTI Tracking Dataset
 
 Download the KITTI tracking dataset from the [official website](http://www.cvlibs.net/datasets/kitti/eval_tracking.php) and create a symlink:
-For the pose data, you can extravt it from the following link: [Google Drive](https://drive.google.com/file/d/1o-ay2FhlOEnKFmqXMWnbH7e6gId8L7P9/view)
+For the pose data, you can extract it from the following link: [Google Drive](https://drive.google.com/file/d/1o-ay2FhlOEnKFmqXMWnbH7e6gId8L7P9/view)
 ```bash
 # Create symlink to your KITTI dataset location
 ln -s /path/to/your/KITTI/dataset dataset/data/KITTI
