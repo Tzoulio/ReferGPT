@@ -138,7 +138,7 @@ Download the KITTI tracking dataset from the [official website](http://www.cvlib
 For the pose data, you can extract it from the following link: [Google Drive](https://drive.google.com/file/d/1o-ay2FhlOEnKFmqXMWnbH7e6gId8L7P9/view)
 ```bash
 # Create symlink to your KITTI dataset location
-ln -s /path/to/your/KITTI/dataset dataset/data/KITTI
+ln -s /path/to/your/KITTI dataset/data/KITTI
 ```
 
 #### 2. CasA Detections

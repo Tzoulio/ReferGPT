@@ -188,7 +188,7 @@ class MotChallenge2DBox(_BaseDataset):
                         ini_data.read(ini_file)
                         seq_lengths[row[0]] = int(ini_data['Sequence']['seqLength'])
                     else:
-                        img_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))),'dataset/data/KITTI/tracking/training/image_02', seq)
+                        img_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))),'dataset/data/KITTI/training/image_02', seq)
                         img_list = os.listdir(img_path)
                         seq_lengths[row[0]] = int(len(img_list))
         return seq_list, seq_lengths

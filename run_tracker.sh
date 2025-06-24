@@ -3,7 +3,7 @@
 CAR_CONFIG_FILE="config/global/cfg_refergpt.yaml"
 PEDESTRIAN_CONFIG_FILE="config/global/cfg_refergpt_pedestrian.yaml"
 PYTHON_SCRIPT="main.py"
-EVAL_SCRIPT="evaluate_cliptrack.sh"
+EVAL_SCRIPT="evaluate_refergpt.sh"
 
 # Function to update tracking_type and run the script
 run_with_tracking_type() {
@@ -33,19 +33,17 @@ run_with_tracking_type() {
   echo "Finished tracking with $tracking_type"
 }
 
-# # Run for "Car"
-run_with_tracking_type "Car" 150
+# Run for "Car"
+# run_with_tracking_type "Car" 150
 
 # # Run for "Pedestrian"
-run_with_tracking_type "Pedestrian" 180
+# run_with_tracking_type "Pedestrian" 180
 
 # Run evaluation script
 echo "Running evaluation script..."
-cd TrackEval/scripts || exit
 bash "$EVAL_SCRIPT"
 
 # Return to the original directory
 echo "Returning to the original directory..."
-cd ../../ || exit
 
 echo "All runs and evaluations completed!"

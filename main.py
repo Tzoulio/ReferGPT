@@ -458,7 +458,7 @@ def load_models_from_config(config):
 
 def main():
     parser = argparse.ArgumentParser(description='arg parser')
-    parser.add_argument('--cfg_file', type=str, default="config/global/virconv_mot.yaml",
+    parser.add_argument('--cfg_file', type=str, default="config/global/cfg_refergpt.yaml",
                         help='specify the config for tracking')
     parser.add_argument('--device', type=str, default=None, help='Device to use (overrides config)')
     args = parser.parse_args()

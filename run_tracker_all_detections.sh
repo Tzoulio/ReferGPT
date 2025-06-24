@@ -4,16 +4,16 @@
 CAR_CONFIG_FILE="config/global/cfg_refergpt.yaml"
 PEDESTRIAN_CONFIG_FILE="config/global/cfg_refergpt_pedestrian.yaml"
 PYTHON_SCRIPT="main.py"
-EVAL_SCRIPT="evaluate_cliptrack.sh"
+EVAL_SCRIPT="evaluate_refergpt.sh"
 
 # === DETECTION & LLM PATHS ===
 DETECTIONS_PATHS=(
-  "/home/leandro/Documents/TrackGPT/ClipTrack/dataset/data/detections/pvrcnn/training"
-  "/home/leandro/Documents/TrackGPT/ClipTrack/dataset/data/detections/qt-3dt/training"
-  "/home/leandro/Documents/TrackGPT/ClipTrack/dataset/data/detections_casa"
-  "/home/leandro/Documents/TrackGPT/ClipTrack/dataset/data/detections/point_rcnn/training"
-  "/home/leandro/Documents/TrackGPT/ClipTrack/dataset/data/detections/virconv/training"
-  "/home/leandro/Documents/TrackGPT/ClipTrack/dataset/data/detections/second_iou/training"
+  "data/detections/pvrcnn/training"
+  "data/detections/qt-3dt/training"
+  "data/detections_casa"
+  "data/detections/point_rcnn/training"
+  "data/detections/virconv/training"
+  "data/detections/second_iou/training"
 )
 
 LLM_OUTPUT_FILES=(
@@ -35,12 +35,12 @@ LLM_OUTPUT_FILES_PEDESTRIAN=(
 )
 
 RESULTS_OUTPUT_TEXT=(
-  "/home/leandro/Documents/TrackGPT/ClipTrack/evaluation/results/sha_key/data/refer-kitti/output/pvrcnn.txt"
-  "/home/leandro/Documents/TrackGPT/ClipTrack/evaluation/results/sha_key/data/refer-kitti/output/qt_3dt.txt"
-  "/home/leandro/Documents/TrackGPT/ClipTrack/evaluation/results/sha_key/data/refer-kitti/output/casa.txt"
-  "/home/leandro/Documents/TrackGPT/ClipTrack/evaluation/results/sha_key/data/refer-kitti/output/point_rcnn.txt"
-  "/home/leandro/Documents/TrackGPT/ClipTrack/evaluation/results/sha_key/data/refer-kitti/output/virconv.txt"
-  "/home/leandro/Documents/TrackGPT/ClipTrack/evaluation/results/sha_key/data/refer-kitti/output/second_iou.txt"
+  "/home/leandro/Documents/TrackGPT/refergpt/evaluation/results/sha_key/data/refer-kitti/output/pvrcnn.txt"
+  "/home/leandro/Documents/TrackGPT/refergpt/evaluation/results/sha_key/data/refer-kitti/output/qt_3dt.txt"
+  "/home/leandro/Documents/TrackGPT/refergpt/evaluation/results/sha_key/data/refer-kitti/output/casa.txt"
+  "/home/leandro/Documents/TrackGPT/refergpt/evaluation/results/sha_key/data/refer-kitti/output/point_rcnn.txt"
+  "/home/leandro/Documents/TrackGPT/refergpt/evaluation/results/sha_key/data/refer-kitti/output/virconv.txt"
+  "/home/leandro/Documents/TrackGPT/refergpt/evaluation/results/sha_key/data/refer-kitti/output/second_iou.txt"
 )
 
 post_score_car=(

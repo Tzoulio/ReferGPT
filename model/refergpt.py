@@ -253,7 +253,7 @@ class Tracker3D:
         video_frame_dict = {}
         file_name = os.path.join(self.config.llm_output_data_file, f"{self.video_id}", f"{self.current_timestamp}.json")
         llm_output = self._load_json(file_name)
-        file_name_2 = self._get_llm_output_file_2()
+        file_name_2 = self._get_existing_llm_captions()
         llm_output_2 = self._load_json(file_name_2)
         for i, (label, box) in enumerate(zip(ids, self.current_bbs)):
             features = self.current_features[i] if self.current_features is not None else None
@@ -282,8 +282,8 @@ class Tracker3D:
         except Exception:
             return None
 
-    def _get_llm_output_file_2(self) -> str:
-        base = "/home/leandro/Documents/TrackGPT/ClipTrack/dataset/data/updated_casa_llm_output_data"
+    def _get_existing_llm_captions(self) -> str:
+        base = "dataset/data/updated_casa_llm_output_data"
         if self.config.tracking_type == "Car":
             return os.path.join(base, f"{self.video_id}", f"{self.current_timestamp}.json")
         elif self.config.tracking_type == "Pedestrian":
