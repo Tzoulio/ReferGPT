@@ -99,29 +99,6 @@ python3 main.py --cfg_file config/global/cfg_refergpt_pedestrian.yaml
 python3 main.py --cfg_file config/global/cfg_refergpt.yaml
 ```
 
-## ⚙️ Configuration
-
-### Key Configuration Options
-
-Edit `config/global/cfg_refergpt.yaml`:
-
-```yaml
-# VLM/LLM Configuration
-vlm_model: "phi"              # VLM model: "phi", "llava", "gpt4"
-use_llm: True                 # Generate new LLM outputs vs use pre-computed
-save_llm_output: False        # Save generated outputs for future use
-
-# Tracking Parameters
-tracking_type: "Car"          # "Car" or "Pedestrian"
-similarity_threshold: -1      # Similarity threshold for matching
-distance_threshold: 150       # Distance threshold for association
-
-# Detection Scores
-input_score: -1.5            # Minimum detection score
-init_score: -1.5             # Score threshold for track initialization
-update_score: -1.5           # Score threshold for track updates
-post_score: 1.6              # Post-processing score threshold
-```
 
 ### Supported VLM Models
 
