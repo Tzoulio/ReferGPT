@@ -122,14 +122,6 @@ python3 main.py --cfg_file config/global/cfg_refergpt.yaml
 - **Language Flexibility**: Supports complex natural language queries
 - **3D Accuracy**: State-of-the-art 3D tracking performance
 
-## 📚 Documentation
-
-- **[Installation Guide](docs/installation.md)**: Complete setup instructions
-- **[Framework Overview](doc/framework.jpg)**: Visual architecture overview
-- **[Demo Video](doc/demo.gif)**: Example tracking results
-
- Issues**: Ensure all config paths are absolute paths
-
 ## 🙏 Acknowledgments
 
 This work builds upon the foundation of [PC3T](https://github.com/hailanyi/3D-Multi-Object-Tracker). Many thanks for their wonderful works.
