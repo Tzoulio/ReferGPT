@@ -23,7 +23,7 @@ tracking_seqs:  [5, 11, 13]
 
 # tracking type
 # tracking_type: Car
-tracking_type: Car
+tracking_type: Car # Car, Pedestrian
 
 # KF parameters
 state_func_covariance: 100

@@ -10,5 +10,5 @@ python3 TrackEval/scripts/run_mot_challenge.py \
 --USE_PARALLEL True \
 --NUM_PARALLEL_CORES 2 \
 --SKIP_SPLIT_FOL True \
---PLOT_CURVES False
+--PLOT_CURVES False \
 

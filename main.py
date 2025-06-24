@@ -3,6 +3,8 @@ import sys
 import os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import subprocess
+
 from model.refergpt import Tracker3D
 from dataset.kitti_dataset import KittiTrackingDataset
 from dataset.kitti_data_base import velo_to_cam
@@ -32,7 +34,23 @@ from transformers import Qwen2VLForConditionalGeneration
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoProcessor, LlavaForConditionalGeneration, AutoModelForImageTextToText
 from accelerate import dispatch_model, infer_auto_device_map
 
+def launch_trackeval():
+    command = [
+        "python", "TrackEval/scripts/run_mot_challenge.py",
+        "--ROOT_DIR", ".",
+        "--METRICS", "HOTA",
+        "--SEQMAP_FILE", "dataset/data_path/seqmap.txt",
+        "--SKIP_SPLIT_FOL", "True",
+        "--GT_FOLDER", "dataset/data/KITTI/training/image_02",
+        "--TRACKERS_FOLDER", "evaluation/results/sha_key/data/refer-kitti",
+        "--GT_LOC_FORMAT", "{gt_folder}{video_id}/{expression_id}/gt.txt",
+        "--TRACKERS_TO_EVAL", "evaluation/results/sha_key/data/refer-kitti",
+        "--USE_PARALLEL", "True",
+        "--NUM_PARALLEL_CORES", "2",
+        "--PLOT_CURVES", "False"
 
+    ]
+    subprocess.run(command, check=True)
 def track_one_seq(seq_id,config, expression, clip_model, clip_preprocess, t5_model, t5_tokenizer, vlm_model, vlm_processor):
 
     """
@@ -367,8 +385,11 @@ def tracking_val_seq(config, models):
             if config.save_llm_output:
                 break
 
-
-    eval_kitti()
+            break
+        break
+    
+    
+    launch_trackeval()
 
 def load_models_from_config(config):
     """
